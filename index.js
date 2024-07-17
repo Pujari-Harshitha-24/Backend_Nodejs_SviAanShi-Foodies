@@ -11,7 +11,8 @@ const app = express()//assigning variables of expr to app
 const cors = require('cors');
 const path = require('path')
 
-const PORT = 4000;//assigning to port
+const PORT = process.env.PORT||4000;//assigning to port
+//proceszs.env.PORT is for deploying in live or access in anywhere  in render
 
 
 
@@ -33,6 +34,6 @@ app.listen(PORT,()=>{
 })
 
 
-app.use(`/home`, (req, res)=>{ //when clicked on home the output will generate 
+app.use(`/`, (req, res)=>{ //when clicked on home the output will generate 
     res.send("<h1> Welcome to SviAanShi'Foodies")//based  on this creating a output
 })
